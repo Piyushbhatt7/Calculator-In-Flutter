@@ -58,24 +58,33 @@ class _CalculatorState extends State<Calculator> {
 
                input = output;
                num1 = null;
+               num2 = null;
+               operator = null;
 
-               
            }
+
+        }
+
+        else if(value == "+" || value == "-" || value== "/"){
+
+          num1 = double.parse(input!);
+          operator = value;
+          input = "";
+
+        }
+
+        else{
+
+          input += value;
+          output = input;
         }
      });
  }
 
-
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Calculator'),
-
-      ),
-
-      
-    );
-  }
+    return Expanded(child: 
+    
+    
+    )
 }
