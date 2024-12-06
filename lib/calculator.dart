@@ -49,11 +49,15 @@ class _CalculatorState extends State<Calculator> {
                   output = (num1! * num2!).toString();
                   break;
 
-                  
+                  case "/":
 
-
+                  output = (num1! / num2!).toString();
+                  break;
 
                }
+
+               input = output;
+               num1 = null;
            }
         }
      });
