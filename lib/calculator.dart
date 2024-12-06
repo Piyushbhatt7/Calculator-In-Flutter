@@ -58,6 +58,8 @@ class _CalculatorState extends State<Calculator> {
 
                input = output;
                num1 = null;
+
+               
            }
         }
      });
