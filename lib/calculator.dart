@@ -10,7 +10,7 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
 
  String output = "0";
- String? input = "";
+ String input = "";
  String? operator;
  double? num1;
  double? num2;
@@ -67,7 +67,7 @@ class _CalculatorState extends State<Calculator> {
 
         else if(value == "+" || value == "-" || value== "/"){
 
-          num1 = double.parse(input!);
+          num1 = double.parse(input);
           operator = value;
           input = "";
 
@@ -81,6 +81,29 @@ class _CalculatorState extends State<Calculator> {
      });
  }
 
+
+ Widget _buildButton(String value) {
+
+     return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.all(20)
+          ),
+          
+          onPressed: (){
+
+          buttontap(value);
+
+        }, child: Text(value, style: TextStyle(fontSize: 24),
+        )
+        ), 
+        ),
+        
+        );
+ }
+
    
 
   @override
@@ -88,10 +111,38 @@ class _CalculatorState extends State<Calculator> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Calculator'),
-
       ),
  
- 
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              alignment: Alignment.bottomRight,
+              padding: const EdgeInsets.all(20),
+              child: Text(output, style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+              ),
+            ),
+            ),
+
+            Column(
+              children: [
+                
+                  Row(
+                children: ["7", "8", "9", "÷"].map((value) => _buildButton(value)).toList(),
+              ),
+              Row(
+                children: ["4", "5", "6", "×"].map((value) => _buildButton(value)).toList(),
+              ),
+              Row(
+                children: ["1", "2", "3", "-"].map((value) => _buildButton(value)).toList(),
+              ),
+              Row(
+                children: ["C", "0", "=", "+"].map((value) => _buildButton(value)).toList(),
+                )
+              ],
+            )
+        ],
+      ),
       
     );
   }
