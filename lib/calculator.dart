@@ -22,7 +22,9 @@ class _CalculatorState extends State<Calculator> {
            
            output = "0";
            input = "";
-           
+           num1 = null;
+           num2 = null;
+
         }
      });
  }
