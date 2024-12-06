@@ -26,6 +26,8 @@ class _CalculatorState extends State<Calculator> {
            num2 = null;
            operator = null;
 
+           
+
         }
      });
  }
