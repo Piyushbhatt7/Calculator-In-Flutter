@@ -41,6 +41,13 @@ class _CalculatorState extends State<Calculator> {
 
                   case "-":
 
+                  output = (num1! - num2!).toString();
+                  break;
+
+                  case "*":
+
+                  
+
                }
            }
         }
