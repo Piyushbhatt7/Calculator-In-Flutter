@@ -24,6 +24,7 @@ class _CalculatorState extends State<Calculator> {
            input = "";
            num1 = null;
            num2 = null;
+           operator = null;
 
         }
      });
