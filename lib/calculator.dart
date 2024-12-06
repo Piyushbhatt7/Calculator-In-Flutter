@@ -29,7 +29,15 @@ class _CalculatorState extends State<Calculator> {
         }
 
         else if (value == "="){
-           
+           if(num1!= null && operator!= null && input.isNotEmpty){
+               num2 = double.parse(input);
+
+               switch (operator){
+                  
+                  case "+":
+                  output 
+               }
+           }
         }
      });
  }
